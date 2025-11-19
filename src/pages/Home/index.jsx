@@ -22,7 +22,7 @@ function Home() {
 
   const fetchCompanies = async (query = "") => {
     setIsLoading(true);
-    const response = await fetch(`http://localhost:5000/api/v1/companies${query}`);
+    const response = await fetch(`${import.meta.env.VITE_BASE_URL}api/v1/companies${query}`);
     const jsonData = await response.json();
     setCompanies(jsonData);
     setIsLoading(false);
